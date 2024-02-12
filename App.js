@@ -40,8 +40,10 @@ const GetUserLocation = async () =>{
       const position = await Location.getCurrentPositionAsync({accuracy: Location.Accuracy.High})
       setLocation({...location,"latitude" : position.coords.latitude, "longitude" : position.coords.longitude})
       setIcon(icons.location_found)
+      
   } catch (error) {
       console.log(error)
+      setIcon(icons.location_not_known)
   }
 
 }

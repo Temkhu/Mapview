@@ -7,11 +7,11 @@ export default function Map(props) {
 const [pin, setPin] = useState(null)
 
 
-/*useEffect(() => {
+useEffect(() => {
   (async()=> {
     GetUserLocation()
   })()
-}, [])*/
+}, [])
 
 const showPin = (e) => {
     const coords = e.nativeEvent.coordinate
