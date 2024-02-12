@@ -6,6 +6,7 @@ import { useState } from 'react';
 import * as Location from 'expo-location'
 import { PaperProvider } from 'react-native-paper';
 import MainAppBar from './components/MainAppBar';
+import { Marker } from 'react-native-maps';
 
 const settings = {
   backgroundColor: '#00a484'
@@ -38,6 +39,7 @@ const GetUserLocation = async () =>{
       }
       const position = await Location.getCurrentPositionAsync({accuracy: Location.Accuracy.High})
       setLocation({...location,"latitude" : position.coords.latitude, "longitude" : position.coords.longitude})
+      setIcon(icons.location_found)
   } catch (error) {
       console.log(error)
   }
